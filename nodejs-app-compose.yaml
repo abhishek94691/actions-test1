@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  app:
+    image: node:18.20-alpine  # Using Node.js Alpine image
+    container_name: node_app  # Name of the container
+    working_dir: /app
+    volumes:
+      - .:/app  # Mount the current directory to the /app directory in the container
+    ports:
+      - "3000:3000"  # Expose port 3000 to the host
+    command: ["npm", "start"]  # Start the app using npm
